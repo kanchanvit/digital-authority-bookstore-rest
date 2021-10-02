@@ -1,7 +1,5 @@
 package com.digital.bookstore.request;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder=true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CheckoutRequest {
-     List<Checkout> checkout;
+public class Checkout {
+
+	Integer bookId;
+	Float discount;
 }
