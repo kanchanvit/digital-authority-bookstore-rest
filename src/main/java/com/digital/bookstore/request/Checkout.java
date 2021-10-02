@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Checkout {
 
-	Integer bookId;
-	Float discount;
+	private Integer bookId;
+	private Float discount;
+	private Float price;
 }
