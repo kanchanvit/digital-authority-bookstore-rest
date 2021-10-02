@@ -2,7 +2,7 @@ package com.digital.bookstore.response;
 
 import java.util.List;
 
-import com.digital.bookstore.request.Checkout;
+import com.digital.bookstore.request.BookRequest;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,7 +13,8 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder=true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CheckoutResponse {
-
-	List<DiscountedPrice> checkout;
+public class DiscountedPrice {
+	
+	private Integer bookId;
+	private Float discountedPrice;
 }

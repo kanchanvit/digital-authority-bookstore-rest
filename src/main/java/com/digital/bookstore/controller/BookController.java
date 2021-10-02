@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.digital.bookstore.request.BookRequest;
 import com.digital.bookstore.request.CheckoutRequest;
 import com.digital.bookstore.response.BookResponse;
+import com.digital.bookstore.response.CheckoutResponse;
 import com.digital.bookstore.response.Status;
 import com.digital.bookstore.service.BookService;
 
@@ -39,8 +40,9 @@ public class BookController {
 	}
 	
 	@PostMapping("/checkout")
-	public ResponseEntity<Status> Checkout(@RequestBody CheckoutRequest checkoutRequest){
+	public ResponseEntity<CheckoutResponse> checkout(@RequestBody CheckoutRequest checkoutRequest){
 		System.out.println(checkoutRequest);
-		return null;
+		
+		return ResponseEntity.of(this.bookService.checkout(checkoutRequest));
 	}
 }
