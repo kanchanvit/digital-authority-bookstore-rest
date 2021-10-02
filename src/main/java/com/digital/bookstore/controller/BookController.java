@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.digital.bookstore.request.BookRequest;
@@ -29,14 +30,20 @@ public class BookController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Status> add(@RequestBody BookRequest BookRequest){
-		return ResponseEntity.of(this.bookService.add(BookRequest));
+	public ResponseEntity<Status> add(@RequestBody BookRequest bookRequest){
+		return ResponseEntity.of(this.bookService.add(bookRequest));
 	}
 	
 	@PutMapping
-	public ResponseEntity<Status> update(@RequestBody BookRequest BookRequest){
+	public ResponseEntity<Status> update(@RequestBody BookRequest bookRequest){
 		//return ResponseEntity.of(this.bookService.update(BookRequest));
-		return null;
+		return ResponseEntity.of(this.bookService.update(bookRequest));
+	}
+	
+	@PutMapping
+	public ResponseEntity<Status> delete(@RequestParam Integer id){
+		//return ResponseEntity.of(this.bookService.update(BookRequest));
+		return ResponseEntity.of(this.bookService.delete(id));
 	}
 	
 	@PostMapping("/checkout")
